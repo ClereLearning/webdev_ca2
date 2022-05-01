@@ -4,16 +4,59 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
-		<!-- https://github.com/sql-js/sql.js -->
-		<script type="text/javascript" src="js/scripts.js"></script>
-		<script type="text/javascript" src="js/gui.js"></script>
 		<!-- Core theme CSS (includes Bootstrap) v5.0.8-->
 		<link href="css/styles.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/onlysqlinterpreter.css">
-		<script type="text/javascript" src="js/onlysqlinterpreter.js"></script>
-		<title>WebDev CA2: Online SQL interpreter part1.1</title>		
+		<script src="js/onlysqlinterpreter.js"></script>
+		<title>WebDev CA2: Online SQL interpreter part1.1</title>
 	</head>
 	<body>
-
-	<body>
-<html>
+		<!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">WebDev CA2</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Part 1.1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="part1.2.html">Part 1.2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="part1.3.html">Part 1.3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mt-5">
+                    <h1>CA2: Data Manipulation & Validation</h1>
+                    <p class="lead">This is Part 1.1</p>
+                </div>
+                <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
+                    <button name="1.1.1" class="btn btn-success btn-block" data-sql="SELECT * FROM departments LIMIT 100" onClick="ExcecuteSQL(this)">1.1.1</button>
+                    <button name="1.1.2" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name FROM employees LIMIT 100" onClick="ExcecuteSQL(this)">1.1.2</button>
+                    <button name="1.1.3" class="btn btn-success btn-block" data-sql="SELECT dept_name FROM departments LIMIT 100" onClick="ExcecuteSQL(this)">1.1.3</button>
+					<button name="1.1.4" class="btn btn-success btn-block" data-sql="SELECT DISTINCT title FROM titles ORDER BY title ASC LIMIT 100" onClick="ExcecuteSQL(this)">1.1.4</button>
+					<button name="1.1.5" class="btn btn-success btn-block" data-sql="SELECT first_name, last_name title FROM employees ORDER BY first_name, last_name ASC LIMIT 100" onClick="ExcecuteSQL(this)">1.1.5</button>					
+                </div>
+                <div class="col-lg-10 order-2 border-success">
+                    <textarea id="commands" class="mb-5">SQL
+                    </textarea>
+                    <div class="d-grid gap-2 mt-2 mb-1">
+                        <button class="btn btn-primary" type="button" id="execute">Execute</button>
+                            <input type="file" class="form-control" id="dbfile" />
+                    </div>
+                    <div id="error" class="error"></div>
+                    <pre id="output">See results here</pre>
+                </div>
+            </div>
+        </div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+		<!-- https://github.com/sql-js/sql.js -->
+        <script src="js/scripts.js"></script>
+        <script src="js/gui.js"></script>
+	</body>
+</html>
